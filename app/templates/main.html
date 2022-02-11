@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title>Very simple memcache</title>
+</head>
+<html>
+    <body>
+
+        <form action="{{ url_for('GET')}}" method="post">
+            <label>key:</label>
+            <input type="text" name="key" />
+            <input type="submit" value="get" />
+        </form>
+
+        <form action="{{ url_for('PUT')}}" enctype = "multipart/form-data" method="post" >
+            <label>key:</label>
+            <input type="text" name="key" />
+            <label>file:</label>
+            <input type="file" name="file" />
+            <input type="submit" value="put" />
+        </form>
+        <form action="{{ url_for('invalidateKey')}}" method="post">
+            <label>delete_key:</label>
+            <input type="text" name="key" />
+            <input type="submit" value="put" />
+        </form>
+        </form>
+        <form action="{{ url_for('CLEAR')}}" method="post">
+            <label>clear cache:</label>
+            <input type="submit" value="put" />
+        </form>
+
+    </body>
+</html>
